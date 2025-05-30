@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Login;
 import com.example.demo.model.dto.*;
-import com.example.demo.service.AuthServiceTest;
+import com.example.demo.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/auth")
-public class AuthController {
+public class AuthControllerTest {
 
-  private final AuthServiceTest svc;
+  private final AuthService svc;
 
-  public AuthController(AuthServiceTest svc) {
+  public AuthControllerTest(AuthService svc) {
     this.svc = svc;
   }
 

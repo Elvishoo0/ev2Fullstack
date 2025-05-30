@@ -11,7 +11,7 @@ public class Login {
   private String id;
 
   private String correo;
-
+  
   @JsonIgnore
   private String contrasena;
 
