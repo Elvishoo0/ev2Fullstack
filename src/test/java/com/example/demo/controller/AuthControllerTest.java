@@ -46,7 +46,8 @@ class AuthControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.correo").value("caro@example.com"));
+                .andExpect(jsonPath("$.correo").value("caro@example.com"))
+                .andExpect(jsonPath("$.idCarrera").value("TI-2024"));
     }
 
     @Test
@@ -61,8 +62,8 @@ class AuthControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(loginRequest)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.correo").value("caro@example.com"))
-                .andExpect(jsonPath("$.token").value("token123"));
+                .andExpect(jsonPath("$.uid").value("caro@example.com"))
+                .andExpect(jsonPath("$.message").value("token123")); // usa los nombres reales de tu DTO
     }
 
     @Test
@@ -76,6 +77,8 @@ class AuthControllerTest {
 
         mockMvc.perform(get("/auth/users"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.length()").value(2));
+                .andExpect(jsonPath("$.length()").value(2))
+                .andExpect(jsonPath("$[0].correo").value("caro@example.com"))
+                .andExpect(jsonPath("$[1].correo").value("sofi@example.com"));
     }
 }
