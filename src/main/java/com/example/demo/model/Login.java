@@ -11,11 +11,23 @@ public class Login {
   private String id;
 
   private String correo;
-  
+
   @JsonIgnore
   private String contrasena;
 
   private String idCarrera;
+
+  // ✅ Constructor vacío requerido para usar new Login()
+  public Login() {
+  }
+
+  // Constructor con argumentos
+  public Login(String id, String correo, String contrasena, String idCarrera) {
+    this.id = id;
+    this.correo = correo;
+    this.contrasena = contrasena;
+    this.idCarrera = idCarrera;
+  }
 
   // Getters & Setters
   public String getId() { return id; }
