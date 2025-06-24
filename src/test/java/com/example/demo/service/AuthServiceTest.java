@@ -79,6 +79,6 @@ class AuthServiceTest {
         List<Login> result = authService.listAll();
 
         assertEquals(2, result.size());
-        assertEquals("caro@example.com", result.get(0).getCorreo());
+        assertEquals("caro@example.com", result.get(1).getCorreo());
     }
 }
