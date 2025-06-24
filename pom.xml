@@ -46,7 +46,13 @@
       <version>2.5.0</version>
     </dependency>
 
-    <!-- Testing support -->
+    <!-- Spring HATEOAS -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-hateoas</artifactId>
+    </dependency>
+
+    <!-- Testing support: JUnit + Mockito -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>

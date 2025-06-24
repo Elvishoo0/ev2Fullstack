@@ -41,5 +41,10 @@ public class AuthService {
     public List<Login> listAll() {
         return loginRepository.findAll();
     }
-}
 
+    /** Devuelve usuario por ID */
+    public Login findById(String id) {
+        return loginRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con ID: " + id));
+    }
+}
